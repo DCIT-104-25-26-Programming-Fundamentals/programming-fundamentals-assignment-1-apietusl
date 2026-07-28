@@ -59,4 +59,49 @@
 # =============================================================================
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
-
+def add_matrices(A, B):
+    result = []
+    for i in range(len(A)):
+        row = []
+        for j in range(len(A[0])):
+            row.append(A[i][j] + B[i][j])
+        result.append(row)
+    return result
+def subtract_matrices(A, B):
+    result = []
+    for i in range(len(A)):
+        row = []
+        for j in range(len(A[0])):
+            row.append(A[i][j] - B[i][j])
+        result.append(row)
+    return result
+def multiply_matrices(A, B):
+    result = []
+    for i in range(len(A)):
+        row = []
+        for j in range(len(B[0])):
+            sum_product = 0
+            for k in range(len(B)):
+                sum_product += A[i][k] * B[k][j]
+            row.append(sum_product)
+        result.append(row)
+    return result
+A = [[1,2],
+     [3,4]]
+B = [[5,6],
+     [7,8]]
+print("Matrix A:")
+for row in A:
+    print(row)
+print("Matrix B:")
+for row in B:
+    print(row)
+print("\nAddition:")
+for row in add_matrices(A, B):
+    print(row)
+print("\nSubtraction:")
+for row in subtract_matrices(A, B):
+    print(row)
+print("\nMultiplication:")
+for row in multiply_matrices(A, B):
+    print(row)
